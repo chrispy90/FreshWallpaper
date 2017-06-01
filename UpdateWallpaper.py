@@ -14,7 +14,7 @@ request.add_header('User-Agent',
 feeddata = opener.open(request).read()
 
 #look in the feeddata for the source of the top ranked wallpaper
-regex = '<a class="thumbnail may-blank outbound " href=(.+?)>'
+regex = '<a class="thumbnail may-blank outbound" data-event-action="thumbnail" href="(.+?)"'
 pattern = re.compile(regex)
 ranks = re.findall(pattern, feeddata)
 topPic = ranks[0]
